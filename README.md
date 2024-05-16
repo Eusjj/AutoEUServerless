@@ -41,7 +41,7 @@ TRC20: TBY7e7YUQCG7wEH3PA8pk6fQPwpshb8Z55
 | [华为云](https://www.huaweicloud.com/product/functiongraph.html)       | 100万   | 400,000 GB-秒   | 不明     | 无         | 大陆,泰国,香港       |             |
 | [**Github Action**](https://docs.github.com/actions)       | 不明   | 不明   | 不明     | 无         | 不明       |    ***推荐使用***         |
 
-**目前国内厂家只剩华为一家,估计也要很快收费了
+**目前国内厂家只剩下华为一家,估计也要很快收费了
 就EUserV自动续费项目而言,推荐使用Github Action来完成,100%稳定,目前已经更新了Workflow代码
 Fork一个到自己的仓库然后点个Star⭐️ 改一下仓库的Action Secrets 即可**
 
