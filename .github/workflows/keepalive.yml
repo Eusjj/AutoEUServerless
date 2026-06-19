@@ -3,6 +3,7 @@ name: Keep Alive (Native)
 on:
   schedule:
     - cron: '0 0 */40 * *' # 每 40 天运行一次
+  workflow_dispatch: # 👈 必须加上这一行，专门用来开启手动运行按钮
 
 jobs:
   keep-alive:
