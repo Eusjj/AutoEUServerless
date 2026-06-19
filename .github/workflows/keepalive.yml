@@ -1,20 +1,20 @@
-name: Keep Actions Alive
+name: Keep Alive (Native)
 
 on:
   schedule:
-    # 每 40 天的午夜 0 点运行一次（避开 60 天限制）
-    - cron: '0 0 */40 * *'
-  workflow_dispatch: # 支持手动触发
+    - cron: '0 0 */40 * *' # 每 40 天运行一次
 
 jobs:
-  keepalive:
+  keep-alive:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # 必须赋予写入权限，否则无法提交
+      contents: write
     steps:
       - uses: actions/checkout@v4
-
-      - name: Keepalive Workflow
-        uses: gautamkrishnar/keepalive-workflow@v2
-        with:
-          use_api: true # 优先使用 GitHub API 活跃仓库，不产生垃圾 commit 历史
+      
+      - name: Create Empty Commit
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit --allow-empty -m "chore: keep repository active to prevent workflow suspension"
+          git push
